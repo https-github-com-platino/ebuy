@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ebuy</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>ebuy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ebuy</name>
     <description>E-commerce website using spring boot</description>
