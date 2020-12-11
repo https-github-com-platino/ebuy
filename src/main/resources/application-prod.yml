@@ -1,0 +1,20 @@
+server:
+  port: 8090
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/ebuy-prod
+    username: foo
+    password: bar
+    driverClassName: org.postgresql.Driver
+logging:
+  level:
+    org.springframework: WARN
+    org.springframework.security: WARN
+    org.hibernate: WARN
+    org.apache: WARN
