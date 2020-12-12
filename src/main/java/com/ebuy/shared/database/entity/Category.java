@@ -8,7 +8,6 @@ import java.util.List;
  * @project ebuy
  * @author Nazim Uddin Asif
  */
-
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data

@@ -26,7 +26,6 @@ public class Product extends BaseEntity{
 //    @Column(name = "file_name")
 //    private Set<String> images = new HashSet<>();
     private String images;
-
     @ManyToOne(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.MERGE,
