@@ -39,6 +39,7 @@ public class Product extends BaseEntity{
 //                    CascadeType.REFRESH}
                     )
 //    @JoinColumn(name = "category_id")
+    
     private Category category;
 
 }
