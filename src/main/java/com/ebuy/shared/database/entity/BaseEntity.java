@@ -23,19 +23,19 @@ public class BaseEntity {
         private Long id;
 
         @CreatedBy
-        @Column(nullable = false, updatable = false)
+        @Column(updatable = false)
         private String createdBy;
 
         @CreatedDate
-        @Column(nullable = false, updatable = false)
+        @Column(updatable = false)
         private LocalDateTime created;
 
         @LastModifiedBy
-        @Column(nullable = false)
+        @Column()
         private String modifiedBy;
 
         @LastModifiedDate
-        @Column(nullable = false)
+        @Column()
         private LocalDateTime modified;
 
         @Column(name = "isDeleted", nullable = false, columnDefinition = "boolean default false")

@@ -1,6 +1,7 @@
 package com.ebuy.shared.database.entity;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,14 +12,17 @@ import java.util.Set;
  * @project ebuy
  * @author Nazim Uddin Asif
  */
-
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product extends BaseEntity{
     private String name;
-    private double price;
-    private int quantity;
-    private double size;
+    private Double price;
+    private Integer quantity;
+    private String size;
+    private Double weight;
     private String color;
 
 //    @ElementCollection
@@ -27,11 +31,14 @@ public class Product extends BaseEntity{
 //    private Set<String> images = new HashSet<>();
     private String images;
 
-    @ManyToOne(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.MERGE,
-                    CascadeType.DETACH,
-                    CascadeType.REFRESH})
-    @JoinColumn(name = "category_id")
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY
+//            cascade = {
+//                    CascadeType.MERGE,
+//                    CascadeType.DETACH,
+//                    CascadeType.REFRESH}
+                    )
+//    @JoinColumn(name = "category_id")
     private Category category;
+
 }

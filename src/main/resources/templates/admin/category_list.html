@@ -1,0 +1,107 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/admin/header::header">
+
+</div>
+
+<body class="animsition">
+<div class="page-wrapper">
+
+
+    <!-- MENU SIDEBAR-->
+    <div th:replace="fragments/admin/menusidebar::menusidebar"></div>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <div th:replace="fragments/admin/menuheader:: menuheader">
+
+        </div>
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="overview-wrap">
+                                <h2 class="title-1">Category List</h2>
+                                <a class="au-btn au-btn-icon au-btn--blue" th:href="@{/categories/add}">
+                                    <i class="zmdi zmdi-plus"></i>add item</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                    </div>
+                    <!-- DATA TABLE-->
+                    <section class="p-t-20">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="table-responsive table-responsive-data2">
+                                        <table class="table table-data2">
+                                            <thead>
+                                            <tr>
+
+                                                <th>Name</th>
+
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow" th:each="category :${categories}">
+
+                                                <td > <span th:text="${category.name}"></span></td>
+                                                    <td>
+                                                    <div class="table-data-feature">
+
+                                                        <a class="item" data-toggle="tooltip" data-placement="top" title="Edit"
+                                                           th:href="@{/categories/update(categoryId=${category.id})}">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </a>
+                                                        <a class="item" data-toggle="tooltip" data-placement="top" title="Delete"
+                                                           th:href="@{/categories/delete(categoryId=${category.id})}">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </a>
+                                                        <a class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- END DATA TABLE-->
+
+                    <div th:replace="fragments/admin/copywrite::copywite"></div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+</div>
+
+<div th:replace="fragments/admin/footer:: footer">
+
+</div>
+
+</body>
+
+</html>
+<!-- end document-->
