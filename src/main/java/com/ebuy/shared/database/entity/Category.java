@@ -5,13 +5,13 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+
 /**
  * @created 11/12/2020 - 6:33 PM
  * @project ebuy
  * @author Nazim Uddin Asif
  */
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
