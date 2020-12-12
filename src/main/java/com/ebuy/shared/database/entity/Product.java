@@ -30,7 +30,6 @@ public class Product extends BaseEntity{
 //    @Column(name = "file_name")
 //    private Set<String> images = new HashSet<>();
     private String images;
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY
 //            cascade = {
@@ -39,7 +38,6 @@ public class Product extends BaseEntity{
 //                    CascadeType.REFRESH}
                     )
 //    @JoinColumn(name = "category_id")
-    
     private Category category;
 
 }
