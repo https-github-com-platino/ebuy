@@ -1,9 +1,11 @@
-package com.ebuy.shared.dataclass.responseDTO;
+package com.ebuy.shared.dataclass.requestDTO;
 
+import com.ebuy.shared.database.entity.Category;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 @Data
-public class ProductResponseDTO {
+public class ProductRequestDto {
     private long id;
     private String name;
     private double price;
@@ -12,4 +14,5 @@ public class ProductResponseDTO {
     private String color;
     private String images;
     private long category;
+
 }

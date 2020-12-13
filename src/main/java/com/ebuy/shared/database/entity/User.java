@@ -4,6 +4,5 @@ package com.ebuy.shared.database.entity;
  * @project ebuy
  * @author Abdur Rahim Nishad
  */
-
 public class User extends BaseEntity{
 }

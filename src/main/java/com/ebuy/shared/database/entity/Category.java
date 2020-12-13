@@ -16,6 +16,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "category")
 public class Category extends BaseEntity{
 
     @Column(name = "name", unique = true)

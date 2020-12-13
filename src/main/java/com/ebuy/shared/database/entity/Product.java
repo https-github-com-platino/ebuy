@@ -17,6 +17,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "product")
 public class Product extends BaseEntity{
     private String name;
     private Double price;
@@ -29,15 +30,12 @@ public class Product extends BaseEntity{
 //    @CollectionTable(name = "image", joinColumns = @JoinColumn(name = "product_id"))
 //    @Column(name = "file_name")
 //    private Set<String> images = new HashSet<>();
+
     private String images;
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY
-//            cascade = {
-//                    CascadeType.MERGE,
-//                    CascadeType.DETACH,
-//                    CascadeType.REFRESH}
-                    )
-//    @JoinColumn(name = "category_id")
+
+
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id1")
     private Category category;
 
 }
