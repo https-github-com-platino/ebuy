@@ -1,5 +1,7 @@
 package com.ebuy.shared.database.entity;
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -16,27 +18,28 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Data
+@Getter
+@Setter
 public class BaseEntity {
         @Id
         @GeneratedValue(strategy=GenerationType.IDENTITY)
-        private Long id;
+        private long id;
 
         @CreatedBy
-        @Column(nullable = false, updatable = false)
+        @Column(updatable = false)
         private String createdBy;
 
         @CreatedDate
         @Column(nullable = false, updatable = false)
-        private LocalDateTime created;
+        private LocalDateTime createdAt;
 
         @LastModifiedBy
-        @Column(nullable = false)
+        @Column()
         private String modifiedBy;
 
         @LastModifiedDate
         @Column(nullable = false)
-        private LocalDateTime modified;
+        private LocalDateTime modifiedAt;
 
         @Column(name = "isDeleted", nullable = false, columnDefinition = "boolean default false")
         private boolean isDeleted;
