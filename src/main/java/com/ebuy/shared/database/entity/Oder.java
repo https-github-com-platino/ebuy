@@ -14,8 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Table(name = "oder")
 public class Oder extends BaseEntity{
 }

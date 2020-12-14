@@ -5,12 +5,12 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/ebuy-dev
     username: postgres
-    password: Rahim5089@
+    password: asifRcode
     driverClassName: org.postgresql.Driver
 logging:
   level:

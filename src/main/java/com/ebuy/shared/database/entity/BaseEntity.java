@@ -1,6 +1,8 @@
 package com.ebuy.shared.database.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -18,6 +20,8 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class BaseEntity {
