@@ -40,11 +40,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteById(long id) {
+        Category category = this.findById(id);
+        category.setDeleted(true);
+        this.save(category);
     }
 
     @Override
     public boolean existsByName(String name) {
-        return categoryRepository.existsByName(name);
+        //return categoryRepository.existsByName(name);
+        return false;
     }
 }
 

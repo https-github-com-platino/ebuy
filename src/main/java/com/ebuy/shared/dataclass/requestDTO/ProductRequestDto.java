@@ -4,15 +4,19 @@ import com.ebuy.shared.database.entity.Category;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+/**
+ * @created 14/12/2020 - 8:33 PM
+ * @project ebuy
+ * @author Nazim Uddin Asif
+ */
 @Data
 public class ProductRequestDto {
     private long id;
     private String name;
-    private double price;
-    private int quantity;
-    private double size;
+    private Double price;
+    private Integer quantity;
+    private String size;
     private String color;
     private String images;
-    private long category;
-
+    private Category category;
 }

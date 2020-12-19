@@ -41,7 +41,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteById(Long id) {
-
+        Product product = this.findById(id);
+        product.setDeleted(true);
+        this.save(product);
     }
 
 
