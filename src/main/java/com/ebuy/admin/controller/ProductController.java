@@ -65,7 +65,6 @@ public class ProductController {
         Product p =requestModelMapperUtil.getRequestDTO(productRequestDto, Product.class);
         productService.save(p);
 
-
         return "redirect:/products/";
     }
 
