@@ -36,7 +36,7 @@
 <!--                        </div>-->
 
                         <form action="#" th:action="@{/products/save}"
-                              th:object="${product}" method="POST">
+                              th:object="${product}" method="POST" enctype="multipart/form-data">
 
                             <!-- Add hidden form field to handle update -->
                             <input type="hidden" th:field="*{id}" />
@@ -65,8 +65,9 @@
 
                             <div class="form-group mb-4 col-4">
                                 <select name="size" th:field="*{size}" id="select" class="form-control">
-                                    <option value="-1">---Size---</option>
-                                    <option th:each="size : ${sizeList}" th:value="${size}" th:text="${size}">Please select</option>
+                                    <option value="----">---Size---</option>
+                                    <option th:each="size : ${sizeList}"
+                                            th:value="${size}" th:text="${size}" th:selected="${product.size}">Please select</option>
                                 </select>
 
                             </div>
@@ -77,28 +78,21 @@
                                     th:if="${#fields.hasErrors('color')}" th:errors="*{color}"
                                     class="text-danger"></span>
                             </div>
-<!--                            <input type="text" th:field="*{price}"-->
-<!--                                   class="form-control mb-4 col-4" placeholder="Price">-->
-<!--                            <input type="text" th:field="*{image}"-->
-<!--                                   class="form-control mb-4 col-4" placeholder="image">-->
-
-<!--                            <div class="form-group mb-4 col-4">-->
-<!--                                <input type="file"  name="file" class="form-control mb-4 col-4" placeholder="Image">-->
-<!--                            </div>-->
 
                             <div class="form-group mb-4 col-4">
-                                <select type="text" th:field ="*{category}"  class="form-control">
-                                    <option value="">choose..</option>
+                                <input type="file"th:field="*{images}" name="file" placeholder="Image" class="form-control mb-4 col-4">
+                            </div>
+                            <div class="form-group mb-4 col-4">
+                                <select type="text" th:field ="*{category.id}"  class="form-control">
+                                    <option value="-1">choose..</option>
                                     <option th:each="category: ${categories}"
                                             th:value="${category.id}"
                                             th:text="${category.name}"></option>
                                 </select>
-                                <span
-                                        th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
-                                        class="text-danger"></span>
+<!--                                <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"-->
+<!--                                        class="text-danger"></span>-->
                             </div>
 
-<!--                            <input type="file"  name="file" class="form-control mb-4 col-4">-->
                             <button type="submit" class="btn btn-info col-2">Save</button>
 
                         </form>

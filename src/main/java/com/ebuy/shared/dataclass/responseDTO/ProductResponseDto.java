@@ -19,5 +19,5 @@ public class ProductResponseDto {
     private String size;
     private String color;
     private String images;
-    private Category category;
+    private CategoryResponseDto category;
 }

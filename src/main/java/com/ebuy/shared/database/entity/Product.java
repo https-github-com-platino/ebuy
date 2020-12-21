@@ -20,17 +20,12 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Table(name = "product")
 public class Product extends BaseEntity{
-    @NotBlank(message = "Title is mandatory")
-    @Column(name= "title",unique = true)
-    private String name;
 
-    @NotNull(message = "price must not be empty")
+    @Column(name= "name",unique = true)
+    private String name;
     private Double price;
-    @NotNull(message = "quantity must not be empty")
     private Integer quantity;
-    @NotBlank(message = "size must not be empty")
     private String size;
-    @NotBlank(message = "color must not be empty")
     private String color;
 
 //    @ElementCollection
@@ -40,7 +35,7 @@ public class Product extends BaseEntity{
 
     private String images;
 
-    @NotBlank(message = "category must not be empty")
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
