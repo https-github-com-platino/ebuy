@@ -34,7 +34,7 @@ public class ProductController {
     public String list(Model model) {
         List<Product> products = productService.findAll();
         model.addAttribute("products", products);
-        return "admin/product_list";
+        return "product_list";
     }
 
     @GetMapping("/add")
@@ -45,7 +45,7 @@ public class ProductController {
         model.addAttribute("product", product);
         List<String> sizeList = Arrays.asList("XL", "XXL", "ML","S");
         model.addAttribute("sizeList", sizeList);
-        return "admin/product_form";
+        return "product_form";
     }
     @GetMapping("/update")
     public String updateProduct(@RequestParam("productId") long id, Model model) {
