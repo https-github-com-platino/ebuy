@@ -74,29 +74,35 @@
                                     </div>
                                    <div class="row">
                                        <div class="col-md-6 col-sm-3">
-                                           <select class="selectpicker" data-style="select-with-transition" multiple title="Choose City" data-size="7">
-                                               <option disabled> Choose city</option>
-                                               <option value="2">Paris </option>
-                                               <option value="3">Bucharest</option>
-                                               <option value="4">Rome</option>
-                                               <option value="5">New York</option>
-                                               <option value="6">Miami </option>
-                                               <option value="7">Piatra Neamt</option>
-                                               <option value="8">Paris </option>
-                                               <option value="9">Bucharest</option>
-                                               <option value="10">Rome</option>
-                                               <option value="11">New York</option>
-                                               <option value="12">Miami </option>
-                                               <option value="13">Piatra Neamt</option>
-                                               <option value="14">Paris </option>
-                                               <option value="15">Bucharest</option>
-                                               <option value="16">Rome</option>
-                                               <option value="17">New York</option>
-                                               <option value="18">Miami </option>
-                                               <option value="19">Piatra Neamt</option>
+                                           <select class="selectpicker" data-style="select-with-transition" multiple title="Choose Size" data-size="7">
+                                               <option disabled> Choose Size</option>
+                                               <option value="2">XL </option>
+                                               <option value="3">XXL</option>
+                                               <option value="4">M</option>
+                                               <option value="5">X</option>
+                                               <option value="6">ML </option>
                                            </select>
                                        </div>
                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <legend>Regular Image</legend>
+                                            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail">
+                                                    <img th:src="@{/img/image_placeholder.jpg}" alt="...">
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                <div>
+                                                    <span class="btn btn-rose btn-round btn-file">
+                                                        <span class="fileinput-new">Select image</span>
+                                                        <span class="fileinput-exists">Change</span>
+                                                        <input type="file" name="..." />
+                                                    </span>
+                                                    <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-fill btn-rose" style="float: right;">Submit</button>
                                 </form>
                             </div>
