@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/header::header"></div>
+<body>
+<div class="wrapper">
+    <div th:replace="fragments/sidebar::sidebar"></div>
+    <div class="main-panel">
+        <div th:replace="fragments/navbar::navbar"></div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-icon" data-background-color="rose">
+                                <i class="material-icons">mail_outline</i>
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title">Add Product</h4>
+                                <form method="#" action="#">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Title</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7">
+                                                <option disabled> --Select Category--</option>
+                                                <option value="2">Paris </option>
+                                                <option value="3">Bucharest</option>
+                                                <option value="4">Rome</option>
+                                                <option value="5">New York</option>
+                                                <option value="6">Miami </option>
+                                                <option value="7">Piatra Neamt</option>
+                                                <option value="8">Paris </option>
+                                                <option value="9">Bucharest</option>
+                                                <option value="10">Rome</option>
+                                                <option value="11">New York</option>
+                                                <option value="12">Miami </option>
+                                                <option value="13">Piatra Neamt</option>
+                                                <option value="14">Paris </option>
+                                                <option value="15">Bucharest</option>
+                                                <option value="16">Rome</option>
+                                                <option value="17">New York</option>
+                                                <option value="18">Miami </option>
+                                                <option value="19">Piatra Neamt</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Size</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Price</label>
+                                                <input type="number" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Available stock</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <div class="row">
+                                       <div class="col-md-6 col-sm-3">
+                                           <select class="selectpicker" data-style="select-with-transition" multiple title="Choose City" data-size="7">
+                                               <option disabled> Choose city</option>
+                                               <option value="2">Paris </option>
+                                               <option value="3">Bucharest</option>
+                                               <option value="4">Rome</option>
+                                               <option value="5">New York</option>
+                                               <option value="6">Miami </option>
+                                               <option value="7">Piatra Neamt</option>
+                                               <option value="8">Paris </option>
+                                               <option value="9">Bucharest</option>
+                                               <option value="10">Rome</option>
+                                               <option value="11">New York</option>
+                                               <option value="12">Miami </option>
+                                               <option value="13">Piatra Neamt</option>
+                                               <option value="14">Paris </option>
+                                               <option value="15">Bucharest</option>
+                                               <option value="16">Rome</option>
+                                               <option value="17">New York</option>
+                                               <option value="18">Miami </option>
+                                               <option value="19">Piatra Neamt</option>
+                                           </select>
+                                       </div>
+                                   </div>
+                                    <button type="submit" class="btn btn-fill btn-rose" style="float: right;">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer::footer"></div>
+    </div>
+</div>
+</body>
+<div th:replace="fragments/footerScript::footerScript"></div>
+</html>

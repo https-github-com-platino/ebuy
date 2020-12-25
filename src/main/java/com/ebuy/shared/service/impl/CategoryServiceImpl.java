@@ -2,6 +2,7 @@ package com.ebuy.shared.service.impl;
 
 import com.ebuy.shared.database.entity.Category;
 import com.ebuy.shared.database.repository.CategoryRepository;
+import com.ebuy.shared.helper.exception.exceptions.ResourceNotFoundException;
 import com.ebuy.shared.service.CategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
         if (result.isPresent()) {
             category = result.get();
         } else {
-            throw new RuntimeException("Did not find employee category");
+            throw new ResourceNotFoundException("Category not found with id: "+ id);
         }
         return category;
     }
@@ -40,11 +41,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteById(long id) {
+        Category category = this.findById(id);
+        category.setDeleted(true);
+        this.save(category);
     }
 
     @Override
     public boolean existsByName(String name) {
-        return categoryRepository.existsByName(name);
+        //return categoryRepository.existsByName(name);
+        return false;
     }
 }
 

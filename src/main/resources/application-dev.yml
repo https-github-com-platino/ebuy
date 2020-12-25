@@ -10,6 +10,7 @@ spring:
     user:
       name: nishad
       password: nishad
+
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/ebuy-dev

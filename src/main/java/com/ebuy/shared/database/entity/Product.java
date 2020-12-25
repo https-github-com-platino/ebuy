@@ -1,7 +1,11 @@
 package com.ebuy.shared.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 /**
  * @created 11/12/2020 - 6:33 PM
  * @project ebuy
@@ -16,11 +20,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "product")
 public class Product extends BaseEntity{
+
+    @Column(name= "name",unique = true)
     private String name;
     private Double price;
     private Integer quantity;
     private String size;
-    private Double weight;
     private String color;
 
 //    @ElementCollection
@@ -30,7 +35,8 @@ public class Product extends BaseEntity{
 
     private String images;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
